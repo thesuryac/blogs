@@ -78,7 +78,7 @@ export default function Search() {
         urlParams.set('category',sidebarData.category);
 
         const searchQuery = urlParams.toString();
-        console.log(searchQuery)
+        
         navigate(`/search?${searchQuery}`);
 
     }
@@ -153,7 +153,7 @@ export default function Search() {
                     )
                 }
                 {
-                    !loading && posts && posts.map((post)=><PostCard key={post.id} post={post}/>)
+                    !loading && posts && posts.map((post)=><PostCard key={post._id} post={post}/>)
                 }
                 {
                     showMore && <button onClick={handleShowMore} className='text-teal-500 text-lg hover:underline p-7'>showMore</button>

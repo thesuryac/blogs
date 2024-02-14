@@ -49,6 +49,11 @@ const Header = () => {
         const searchQuery = urlParams.toString();
         navigate(`/search?${searchQuery}`)
     }
+    const handleButton =()=>{
+        setSearchTerm(searchTerm)
+        navigate('/search')
+
+    }
   return (
     <Navbar className='border-b-2'>
         <Link to='/' className='self-center whitespace-nowrap text-sm sm:text-xl font-semibold dark:text-white'>
@@ -65,7 +70,7 @@ const Header = () => {
             onChange={(e)=> setSearchTerm(e.target.value)}
             />
         </form>
-        <Button className='w-12 h-10 lg:hidden' color='gray' pill>
+        <Button className='w-12 h-10 lg:hidden' onClick={handleButton} color='gray' pill>
             <AiOutlineSearch/>
         </Button>
         <div className="flex gap-2 md:order-2">
